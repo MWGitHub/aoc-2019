@@ -2,7 +2,7 @@
 
 go build
 
-inputs=$(cat day1_input.txt | tr "\n" " ")
+inputs=$(cat day1_input.txt | tr '\n' ' ')
 result="$(./day1 $inputs)"
 echo "$result"
 
