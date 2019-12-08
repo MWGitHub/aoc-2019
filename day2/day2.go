@@ -3,7 +3,9 @@ package main
 import (
 	"errors"
 	"fmt"
-	"ioutil"
+	"os"
+	"strconv"
+	"strings"
 )
 
 const (
@@ -40,5 +42,20 @@ func IntCoder(codes []int) []int {
 }
 
 func main() {
-	fmt.Println("foo")
+	argInput := os.Args[1]
+
+	input := strings.Split(argInput, ",")
+	codes := make([]int, len(input))
+	for i, v := range input {
+		code, err := strconv.Atoi(v)
+		if err != nil {
+			panic(err)
+		}
+		codes[i] = code
+	}
+	// start with 1202 program alarm state
+	codes[1] = 12
+	codes[2] = 2
+
+	fmt.Println(IntCoder(codes))
 }
