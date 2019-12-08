@@ -57,5 +57,5 @@ func main() {
 	codes[1] = 12
 	codes[2] = 2
 
-	fmt.Println(IntCoder(codes))
+	fmt.Println(IntCoder(codes)[0])
 }
