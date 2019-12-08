@@ -9,14 +9,15 @@ import (
 )
 
 // CalculateFuelRequirements returns the fuel needed for a given mass.
-// A low mass can return a negative value.
 func CalculateFuelRequirements(mass int) int {
 	divider := 3
 	tolerance := 2
 
-	fuel := (mass / divider) - tolerance
+	if fuel := (mass / divider) - tolerance; fuel > 0 {
+		return fuel + CalculateFuelRequirements(fuel)
+	}
 
-	return fuel
+	return 0
 }
 
 func main() {
