@@ -13,3 +13,4 @@ Advent of Code 2019
     * Eclipse Che
         * Cache still using previous save of a file when building
         * Dropped commands in the terminal
+        * Wrong file contents when committing, using a cached version of the file instead
